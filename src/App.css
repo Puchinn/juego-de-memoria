@@ -1,0 +1,28 @@
+.listaTarjetas {
+  list-style: none;
+  max-width: 600px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.tarjeta {
+  padding: 30px;
+  background-color: beige;
+  color: black;
+  text-align: center;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+.tarjeta.estaRevelada {
+  /* Estilos para las tarjetas reveladas */
+  background-color: aqua;
+  color: black;
+}
+
+.btn-comenzar {
+  margin: 10px auto;
+  display: block;
+}
