@@ -15,7 +15,9 @@ export function Tarjeta({
   return (
     <li
       onClick={handleClickTarjeta}
-      className={`tarjeta ${estaRevelada && 'estaRevelada'}`}
+      className={`tarjeta ${
+        estaRevelada ? 'estaRevelada flip-in-ver-right' : 'flip-in-ver-left'
+      }`}
     >
       {estaRevelada || estaSeleccionada ? children : '?'}
     </li>
