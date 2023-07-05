@@ -14,6 +14,7 @@
   text-align: center;
   font-size: 35px;
   cursor: pointer;
+  border-radius: 10%;
 }
 
 .tarjeta.estaRevelada {
@@ -22,7 +23,30 @@
   color: black;
 }
 
-.btn-comenzar {
-  margin: 10px auto;
-  display: block;
+.botones {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  gap: 0 15px;
+}
+
+.win {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.382);
+  height: 100vh;
+  width: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.win-box {
+  background-color: rgba(16, 15, 15, 0.982);
+  border-radius: 15px;
+  padding: 30px 60px;
+}
+
+.mostrarWin {
+  display: flex;
 }
