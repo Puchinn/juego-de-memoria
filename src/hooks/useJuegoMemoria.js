@@ -10,6 +10,8 @@ export function useJuegoMemoria() {
   const [tarjetasSeleccionadas, setTarjetasSeleccionadas] = useState([])
   const [indicesCompletados, setIndicesCompletados] = useState(0)
   const [hayGanador, setHayGanador] = useState(false)
+  const [mostrandoTablero, setMostrandoTablero] = useState(false)
+  const [transicion, setTransicion] = useState(false)
 
   const reiniciarJuego = () => {
     const nuevoTablero = crearTablero({ arrayDeContenido: contenidoTarjetas })
@@ -20,6 +22,7 @@ export function useJuegoMemoria() {
   }
 
   const handleClick = (indice, estaRevelado, estaSeleccionado) => {
+    if (transicion) return
     if (!estaRevelado) {
       setTarjetasReveladas([...tarjetasReveladas, indice])
     }
@@ -33,14 +36,17 @@ export function useJuegoMemoria() {
   }
 
   const mostrarTablero = () => {
-    if (contenidoTarjetas.length === indicesCompletados) {
+    if (mostrandoTablero) {
       return
     }
+    console.log('mostrando tablero')
     const tableroRevelado = tablero.map((_, indice) => indice)
     const copiaTarjetasReveladas = [...tarjetasReveladas]
     setTarjetasReveladas(tableroRevelado)
+    setMostrandoTablero(true)
     setTimeout(() => {
       setTarjetasReveladas(copiaTarjetasReveladas)
+      setMostrandoTablero(false)
     }, 1500)
   }
 
@@ -48,10 +54,11 @@ export function useJuegoMemoria() {
     const [indice1, indice2] = tarjetasSeleccionadas
     const valor1 = tablero[indice1]
     const valor2 = tablero[indice2]
-
+    setTransicion(true)
     if (valor1 === valor2) {
       setTarjetasReveladas([...tarjetasReveladas, indice1, indice2])
       setIndicesCompletados(indicesCompletados + 1)
+      setTransicion(false)
     } else {
       setTimeout(() => {
         setTarjetasReveladas(
@@ -59,8 +66,10 @@ export function useJuegoMemoria() {
             (indice) => !tarjetasSeleccionadas.includes(indice)
           )
         )
-      }, 200)
+        setTransicion(false)
+      }, 500)
     }
+
     setTarjetasSeleccionadas([])
   }
 
