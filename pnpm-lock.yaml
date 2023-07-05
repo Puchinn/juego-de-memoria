@@ -4,6 +4,7 @@ specifiers:
   '@types/react': ^18.0.37
   '@types/react-dom': ^18.0.11
   '@vitejs/plugin-react-swc': ^3.0.0
+  canvas-confetti: ^1.6.0
   eslint: ^8.38.0
   eslint-plugin-react: ^7.32.2
   eslint-plugin-react-hooks: ^4.6.0
@@ -13,6 +14,7 @@ specifiers:
   vite: ^4.3.9
 
 dependencies:
+  canvas-confetti: 1.6.0
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
 
@@ -568,6 +570,10 @@ packages:
     resolution: {integrity: sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==}
     engines: {node: '>=6'}
     dev: true
+
+  /canvas-confetti/1.6.0:
+    resolution: {integrity: sha512-ej+w/m8Jzpv9Z7W7uJZer14Ke8P2ogsjg4ZMGIuq4iqUOqY2Jq8BNW42iGmNfRwREaaEfFIczLuZZiEVSYNHAA==}
+    dev: false
 
   /chalk/4.1.2:
     resolution: {integrity: sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==}
