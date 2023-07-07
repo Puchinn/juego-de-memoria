@@ -1,38 +1,22 @@
-import { Tablero } from './Tablero'
-import { useJuegoMemoria } from './hooks/useJuegoMemoria'
-import { Winner } from './Winner'
+import { Tablero } from './components/Tablero'
+import { Winner } from './components/Winner'
+import { useJuegoContext } from './hooks/useJuegoContext'
 import './App.css'
 
 function App() {
-  const {
-    tablero,
-    reiniciarJuego,
-    handleClick,
-    tarjetasReveladas,
-    tarjetasSeleccionadas,
-    mostrarTablero,
-    hayGanador,
-    ok,
-  } = useJuegoMemoria()
+  const { reiniciarJuego, mostrarTablero } = useJuegoContext()
 
   return (
     <div>
       <h1>Juego de memoria</h1>
-      <div>
-        <Tablero
-          tablero={tablero}
-          handleClick={handleClick}
-          tarjetasReveladas={tarjetasReveladas}
-          tarjetasSeleccionadas={tarjetasSeleccionadas}
-        />
-      </div>
+      <Tablero />
       <div className='botones'>
         <button onClick={reiniciarJuego} className='btn-comenzar'>
           Nuevo Tablero
         </button>
         <button onClick={mostrarTablero}>Mostrar Tablero</button>
       </div>
-      <Winner hayGanador={hayGanador} ok={ok} />
+      <Winner />
     </div>
   )
 }
