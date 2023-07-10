@@ -2,10 +2,10 @@ import { Tarjeta } from './Tarjeta'
 import { useJuegoContext } from '../hooks/useJuegoContext'
 
 export function Tablero() {
-  const { tablero } = useJuegoContext()
+  const { tablero, tamañoClase } = useJuegoContext()
 
   return (
-    <ul className='listaTarjetas'>
+    <ul className={`listaTarjetas t${tamañoClase}`}>
       {tablero.map((elemento, indice) => (
         <Tarjeta key={indice} indice={indice}>
           {elemento}
