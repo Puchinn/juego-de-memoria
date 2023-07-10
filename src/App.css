@@ -3,12 +3,27 @@
   max-width: 800px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
   gap: 10px;
 }
 
+.t4x3 {
+  grid-template-columns: repeat(4, 1fr);
+}
+.t5x4 {
+  grid-template-columns: repeat(5, 1fr);
+}
+.t6x6 {
+  grid-template-columns: repeat(6, 1fr);
+}
+.t7x6 {
+  grid-template-columns: repeat(7, 1fr);
+}
+.t9x6 {
+  grid-template-columns: repeat(9, 1fr);
+}
+
 .tarjeta {
-  padding: 30px;
+  padding: 15px;
   background-color: beige;
   color: black;
   text-align: center;
@@ -51,12 +66,28 @@
   display: flex;
 }
 
-.flip-in-ver-left {
+.flip-in-ver-left-lento {
   animation: flip-in-ver-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.flip-in-ver-right {
+.flip-in-ver-right-lento {
   animation: flip-in-ver-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.flip-in-ver-left-normal {
+  animation: flip-in-ver-left 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.flip-in-ver-right-normal {
+  animation: flip-in-ver-right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.flip-in-ver-left-rapido {
+  animation: flip-in-ver-left 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.flip-in-ver-right-rapido {
+  animation: flip-in-ver-right 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 @keyframes flip-in-ver-right {
