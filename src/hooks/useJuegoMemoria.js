@@ -1,6 +1,19 @@
 import { useTablero } from './useTablero'
+import { useConfigJuego } from './useConfigJuego'
 
 export function useJuegoMemoria() {
+  const {
+    velocidad,
+    actualizarVelocidad,
+    claseVelocidad,
+    mostrarNumeracion,
+    ocultarNumeros,
+    motrarNumeros,
+    actualizarTamaño,
+    tamañoTablero,
+    tamañoClase,
+  } = useConfigJuego()
+
   const {
     tablero,
     nuevoTablero,
@@ -8,7 +21,7 @@ export function useJuegoMemoria() {
     mostrarTarjeta,
     tableroCompletado,
     mostrarTablero,
-  } = useTablero()
+  } = useTablero({ velocidad: velocidad, tamañoTablero: tamañoTablero })
 
   const reiniciarJuego = () => {
     nuevoTablero()
@@ -25,5 +38,13 @@ export function useJuegoMemoria() {
     mostrarTarjeta,
     tableroCompletado,
     mostrarTablero,
+    actualizarVelocidad,
+    claseVelocidad,
+    mostrarNumeracion,
+    ocultarNumeros,
+    motrarNumeros,
+    actualizarTamaño,
+    tamañoClase,
+    nuevoTablero,
   }
 }

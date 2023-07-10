@@ -3,9 +3,12 @@ import { crearTablero } from '../js/functions'
 import { contenidoTarjetas } from '../js/consts'
 import { encontrarPar } from '../js/functions'
 
-const tableroInicial = crearTablero({ arrayDeContenido: contenidoTarjetas })
+const tableroInicial = crearTablero({
+  arrayDeContenido: contenidoTarjetas,
+  longitud: 18,
+})
 
-export function useTablero() {
+export function useTablero({ velocidad, tamañoTablero }) {
   const [tablero, setTablero] = useState(tableroInicial)
   const [tarjetasEncontradas, setTarjetasEncontradas] = useState([])
   const [tarjetasSeleccionadas, setTarjetasSeleccionadas] = useState([])
@@ -13,8 +16,11 @@ export function useTablero() {
 
   const tableroCompletado = tarjetasEncontradas.length === tablero.length
 
-  const nuevoTablero = () => {
-    const nuevoTablero = crearTablero({ arrayDeContenido: contenidoTarjetas })
+  const nuevoTablero = (long = tamañoTablero) => {
+    const nuevoTablero = crearTablero({
+      arrayDeContenido: contenidoTarjetas,
+      longitud: long,
+    })
     setTablero(nuevoTablero)
     setTarjetasEncontradas([])
     setTarjetasSeleccionadas([])
@@ -63,7 +69,7 @@ export function useTablero() {
         )
         setTarjetasEncontradas(tableroSinSeleccionadas)
         setEsperarAnimacion(false)
-      }, 500)
+      }, velocidad)
     }
     setTarjetasSeleccionadas([])
   }
