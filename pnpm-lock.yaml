@@ -11,12 +11,14 @@ specifiers:
   eslint-plugin-react-refresh: ^0.3.4
   react: ^18.2.0
   react-dom: ^18.2.0
+  react-timer-hook: ^3.0.6
   vite: ^4.3.9
 
 dependencies:
   canvas-confetti: 1.6.0
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  react-timer-hook: 3.0.6_react@18.2.0
 
 devDependencies:
   '@types/react': 18.2.14
@@ -1455,6 +1457,14 @@ packages:
   /react-is/16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
     dev: true
+
+  /react-timer-hook/3.0.6_react@18.2.0:
+    resolution: {integrity: sha512-6O1gcBT7R5gm2W14mGAu35KfX0tdJ9s817UDJTL7/IQUXqK6wkYgZzy1mSLa6N+AQGEhgoVCtTsP7tIhBmSD6A==}
+    peerDependencies:
+      react: '>=16.8.0'
+    dependencies:
+      react: 18.2.0
+    dev: false
 
   /react/18.2.0:
     resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}
