@@ -4,10 +4,11 @@ const numeroRandom = (rango) => {
   return Math.trunc(Math.random() * rango)
 }
 
-export function crearTablero({ arrayDeContenido }) {
-  const nuevoTablero = new Array(arrayDeContenido.length * 2).fill(0)
+export function crearTablero({ arrayDeContenido, longitud }) {
+  const recotarTablero = arrayDeContenido.slice(0, longitud)
+  const nuevoTablero = new Array(recotarTablero.length * 2).fill(0)
   const rangoDeNumeros = nuevoTablero.length
-  arrayDeContenido.forEach((ele) => {
+  recotarTablero.forEach((ele) => {
     const comprobar = (numero) => {
       const posicionAleatoria = numeroRandom(rangoDeNumeros)
       if (nuevoTablero[numero] === 0) {
