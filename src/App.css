@@ -3,46 +3,28 @@
   max-width: 800px;
   margin: 0 auto;
   display: grid;
-  gap: 10px;
-}
-
-.t4x3 {
-  grid-template-columns: repeat(4, 1fr);
-}
-.t5x4 {
-  grid-template-columns: repeat(5, 1fr);
-}
-.t6x6 {
-  grid-template-columns: repeat(6, 1fr);
-}
-.t7x6 {
-  grid-template-columns: repeat(7, 1fr);
-}
-.t9x6 {
-  grid-template-columns: repeat(9, 1fr);
+  justify-content: center;
+  gap: 5px;
 }
 
 .tarjeta {
-  padding: 15px;
-  background-color: beige;
+  width: 115px;
+  height: 115px;
+  background-color: rgb(229 231 235 / 0.45);
   color: black;
-  text-align: center;
-  font-size: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
   cursor: pointer;
-  border-radius: 10%;
+  border-radius: 5%;
+  font-weight: bold;
 }
 
 .tarjeta.estaRevelada {
   /* Estilos para las tarjetas reveladas */
-  background-color: aqua;
+  background-color: rgba(23, 23, 23, 0.852);
   color: black;
-}
-
-.botones {
-  display: flex;
-  justify-content: center;
-  margin-top: 15px;
-  gap: 0 15px;
 }
 
 .win {
@@ -57,7 +39,7 @@
 }
 
 .win-box {
-  background-color: rgba(16, 15, 15, 0.982);
+  background-color: rgba(212, 211, 211, 0.982);
   border-radius: 15px;
   padding: 30px 60px;
 }
@@ -109,5 +91,76 @@
   100% {
     transform: rotateY(0);
     opacity: 1;
+  }
+}
+
+.t4x3 {
+  display: grid;
+  grid-template-columns: repeat(4, 115px);
+}
+
+.t5x4 {
+  display: grid;
+  grid-template-columns: repeat(5, 115px);
+}
+
+.t6x6 {
+  display: grid;
+  grid-template-columns: repeat(6, 115px);
+}
+
+.t7x6 {
+  display: grid;
+  grid-template-columns: repeat(7, 115px);
+}
+
+.t9x6 {
+  display: grid;
+  grid-template-columns: repeat(9, 115px);
+}
+
+/* Responsive para pantallas medianas */
+@media (max-width: 1024px) {
+  .tarjeta {
+    width: 65px;
+    height: 65px;
+  }
+  .t4x3 {
+    grid-template-columns: repeat(4, 65px);
+  }
+  .t5x4 {
+    grid-template-columns: repeat(5, 65px);
+  }
+  .t6x6 {
+    grid-template-columns: repeat(6, 65px);
+  }
+  .t7x6 {
+    grid-template-columns: repeat(7, 65px);
+  }
+  .t9x6 {
+    grid-template-columns: repeat(9, 65px);
+  }
+}
+
+/* Responsive para móviles pequeños */
+@media (max-width: 680px) {
+  .tarjeta {
+    width: 50px;
+    height: 50px;
+  }
+  .t4x3 {
+    grid-template-columns: repeat(4, 50px);
+  }
+  .t5x4 {
+    grid-template-columns: repeat(5, 50px);
+  }
+  .t6x6 {
+    grid-template-columns: repeat(6, 50px);
+  }
+  .t7x6 {
+    grid-template-columns: repeat(7, 50px);
+  }
+  .t9x6 {
+    grid-template-columns: repeat(6, 50px);
   }
 }

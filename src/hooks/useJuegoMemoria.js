@@ -1,5 +1,5 @@
-import { useTablero } from './useTablero'
-import { useConfigJuego } from './useConfigJuego'
+import { useTablero } from "./useTablero";
+import { useConfigJuego } from "./useConfigJuego";
 
 export function useJuegoMemoria() {
   const {
@@ -12,7 +12,7 @@ export function useJuegoMemoria() {
     actualizarTamaño,
     tamañoTablero,
     tamañoClase,
-  } = useConfigJuego()
+  } = useConfigJuego();
 
   const {
     tablero,
@@ -21,15 +21,17 @@ export function useJuegoMemoria() {
     mostrarTarjeta,
     tableroCompletado,
     mostrarTablero,
-  } = useTablero({ velocidad: velocidad, tamañoTablero: tamañoTablero })
+    movimientos,
+    parejas,
+  } = useTablero({ velocidad: velocidad, tamañoTablero: tamañoTablero });
 
   const reiniciarJuego = () => {
-    nuevoTablero()
-  }
+    nuevoTablero();
+  };
 
   const handleClick = (indice) => {
-    seleccionarTarjeta(indice)
-  }
+    seleccionarTarjeta(indice);
+  };
 
   return {
     tablero,
@@ -46,5 +48,7 @@ export function useJuegoMemoria() {
     actualizarTamaño,
     tamañoClase,
     nuevoTablero,
-  }
+    movimientos,
+    parejas,
+  };
 }
